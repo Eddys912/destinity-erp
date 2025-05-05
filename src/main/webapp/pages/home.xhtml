@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="/components/layout.xhtml">
+
+  <!-- Título dinámico de la pestaña -->
+  <ui:define name="title">Inicio - Destinity</ui:define>
+
+  <!-- Contenido principal -->
+  <ui:define name="content">
+      
+        <h1 class="sr-only">Inicio Destinity ERP</h1>
+    
+        <!-- Panel de Analíticas Globales -->
+          <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10" aria-labelledby="analytics-heading">
+            <article class="bg-white p-6 shadow-md rounded-lg border-l-4 border-green-500">
+              <div class="flex items-center justify-between mb-3">
+                <i class="ph ph-trend-up text-2xl text-green-600" aria-hidden="true"></i>
+                <span class="text-sm text-gray-500">Últimos 30 días</span>
+              </div>
+              <h3 class="text-lg font-semibold text-gray-700">Ingresos Totales</h3>
+              <p class="text-2xl font-bold text-green-600">$120,450</p>
+              <div class="flex items-center text-green-600 mt-2">
+                <i class="ph ph-arrow-up mr-2" aria-hidden="true"></i>
+                <span class="text-sm">12.5% desde el mes anterior</span>
+              </div>
+            </article>
+
+            <article class="bg-white p-6 shadow-md rounded-lg border-l-4 border-red-500">
+              <div class="flex items-center justify-between mb-3">
+                <i class="ph ph-trend-down text-2xl text-red-600" aria-hidden="true"></i>
+                <span class="text-sm text-gray-500">Últimos 30 días</span>
+              </div>
+              <h3 class="text-lg font-semibold text-gray-700">Gastos Totales</h3>
+              <p class="text-2xl font-bold text-red-500">$45,320</p>
+              <div class="flex items-center text-red-600 mt-2">
+                <i class="ph ph-arrow-down mr-2" aria-hidden="true"></i>
+                <span class="text-sm">5.2% desde el mes anterior</span>
+              </div>
+            </article>
+
+            <article class="bg-white p-6 shadow-md rounded-lg border-l-4 border-blue-500">
+              <div class="flex items-center justify-between mb-3">
+                <i class="ph ph-package text-2xl text-blue-600" aria-hidden="true"></i>
+                <span class="text-sm text-gray-500">Este mes</span>
+              </div>
+              <h3 class="text-lg font-semibold text-gray-700">Órdenes Completadas</h3>
+              <p class="text-2xl font-bold text-blue-600">325</p>
+              <div class="flex items-center text-blue-600 mt-2">
+                <i class="ph ph-check-circle mr-2" aria-hidden="true"></i>
+                <span class="text-sm">+8% rendimiento</span>
+              </div>
+            </article>
+
+            <article class="bg-white p-6 shadow-md rounded-lg border-l-4 border-yellow-500">
+              <div class="flex items-center justify-between mb-3">
+                <i class="ph ph-users text-2xl text-yellow-600" aria-hidden="true"></i>
+                <span class="text-sm text-gray-500">Este mes</span>
+              </div>
+              <h3 class="text-lg font-semibold text-gray-700">Clientes Nuevos</h3>
+              <p class="text-2xl font-bold text-yellow-500">45</p>
+              <div class="flex items-center text-yellow-600 mt-2">
+                <i class="ph ph-user-plus mr-2" aria-hidden="true"></i>
+                <span class="text-sm">15% crecimiento</span>
+              </div>
+            </article>
+          </section>
+
+        <!-- Sección de bienvenida -->
+        <section class="bg-white p-8 shadow-md rounded-lg text-center" aria-labelledby="welcome-heading">
+            <h2 id="welcome-heading" class="text-3xl font-bold text-gray-800">Bienvenido a Destinity ERP</h2>
+            <p class="text-gray-600 mt-4 max-w-2xl mx-auto flex-1 h-full">
+              Gestione su negocio de manera eficiente con nuestras herramientas avanzadas.
+            </p>
+        </section>
+  </ui:define>
+
+</ui:composition>

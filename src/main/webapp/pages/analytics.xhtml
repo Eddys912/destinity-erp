@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<ui:composition
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+  template="/components/layout.xhtml"
+>
+  <!-- Título dinámico de la pestaña -->
+  <ui:define name="title">Analíticas - Destinity</ui:define>
+
+  <!-- Contenido principal -->
+  <ui:define name="content">
+    <h2
+      class="pb-4 text-2xl md:text-3xl font-bold text-gray-800 flex items-center gap-2 md:mb-0"
+    >
+      <i class="ph ph-chart-bar text-blue-600"></i>
+      Gestión de Analíticas
+    </h2>
+
+    <!-- Ventas Totales -->
+    <div
+      class="bg-gradient-to-r from-blue-500 to-indigo-600 p-8 rounded-xl shadow-lg w-full mb-10 text-center text-white"
+    >
+      <h2 class="text-2xl font-bold">Ventas Totales</h2>
+      <p class="text-6xl font-extrabold text-green-300 mt-2">$150,000</p>
+      <p class="text-lg mt-1">
+        Comparado con el mes pasado:
+        <span class="text-green-300 font-bold">+12%</span>
+      </p>
+    </div>
+
+    <!-- Productos Más Vendidos -->
+    <div class="mb-12">
+      <h2 class="text-xl font-bold mb-6 text-gray-800 flex items-center">
+        Productos Más Vendidos
+      </h2>
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6"
+      >
+        <div
+          class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col h-full border border-gray-100"
+        >
+          <div class="flex justify-between items-start mb-3">
+            <div class="bg-indigo-100 p-2 rounded-lg">
+              <span class="text-xl">🍞</span>
+            </div>
+            <span
+              class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-1 rounded-full"
+              >Trending</span
+            >
+          </div>
+          <p class="text-xl font-bold text-gray-800 mt-2">Pan Baguette</p>
+          <p class="text-indigo-600 font-medium text-sm mb-2">La Panadería</p>
+          <div class="mt-auto">
+            <p class="text-3xl font-bold text-gray-800 mb-2">$2.50</p>
+            <div class="flex justify-between text-sm text-gray-600 mb-1">
+              <span>Ganancia:</span>
+              <span class="font-bold text-green-600">$1.20</span>
+            </div>
+            <div class="flex justify-between text-sm text-gray-600 mb-1">
+              <span>Stock:</span>
+              <span class="font-medium">1200 unidades</span>
+            </div>
+            <div class="mt-3 pt-3 border-t border-gray-100">
+              <span
+                class="inline-block bg-gray-100 text-gray-800 text-xs px-2.5 py-1 rounded-full"
+                >Panadería</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col h-full border border-gray-100"
+        >
+          <div class="flex justify-between items-start mb-3">
+            <div class="bg-indigo-100 p-2 rounded-lg">
+              <span class="text-xl">🍞</span>
+            </div>
+            <span
+              class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-1 rounded-full"
+              >Trending</span
+            >
+          </div>
+          <p class="text-xl font-bold text-gray-800 mt-2">Pan Baguette</p>
+          <p class="text-indigo-600 font-medium text-sm mb-2">La Panadería</p>
+          <div class="mt-auto">
+            <p class="text-3xl font-bold text-gray-800 mb-2">$2.50</p>
+            <div class="flex justify-between text-sm text-gray-600 mb-1">
+              <span>Ganancia:</span>
+              <span class="font-bold text-green-600">$1.20</span>
+            </div>
+            <div class="flex justify-between text-sm text-gray-600 mb-1">
+              <span>Stock:</span>
+              <span class="font-medium">1200 unidades</span>
+            </div>
+            <div class="mt-3 pt-3 border-t border-gray-100">
+              <span
+                class="inline-block bg-gray-100 text-gray-800 text-xs px-2.5 py-1 rounded-full"
+                >Panadería</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col h-full border border-gray-100"
+        >
+          <div class="flex justify-between items-start mb-3">
+            <div class="bg-indigo-100 p-2 rounded-lg">
+              <span class="text-xl">🍞</span>
+            </div>
+            <span
+              class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-1 rounded-full"
+              >Trending</span
+            >
+          </div>
+          <p class="text-xl font-bold text-gray-800 mt-2">Pan Baguette</p>
+          <p class="text-indigo-600 font-medium text-sm mb-2">La Panadería</p>
+          <div class="mt-auto">
+            <p class="text-3xl font-bold text-gray-800 mb-2">$2.50</p>
+            <div class="flex justify-between text-sm text-gray-600 mb-1">
+              <span>Ganancia:</span>
+              <span class="font-bold text-green-600">$1.20</span>
+            </div>
+            <div class="flex justify-between text-sm text-gray-600 mb-1">
+              <span>Stock:</span>
+              <span class="font-medium">1200 unidades</span>
+            </div>
+            <div class="mt-3 pt-3 border-t border-gray-100">
+              <span
+                class="inline-block bg-gray-100 text-gray-800 text-xs px-2.5 py-1 rounded-full"
+                >Panadería</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col h-full border border-gray-100"
+        >
+          <div class="flex justify-between items-start mb-3">
+            <div class="bg-indigo-100 p-2 rounded-lg">
+              <span class="text-xl">🍞</span>
+            </div>
+            <span
+              class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-1 rounded-full"
+              >Trending</span
+            >
+          </div>
+          <p class="text-xl font-bold text-gray-800 mt-2">Pan Baguette</p>
+          <p class="text-indigo-600 font-medium text-sm mb-2">La Panadería</p>
+          <div class="mt-auto">
+            <p class="text-3xl font-bold text-gray-800 mb-2">$2.50</p>
+            <div class="flex justify-between text-sm text-gray-600 mb-1">
+              <span>Ganancia:</span>
+              <span class="font-bold text-green-600">$1.20</span>
+            </div>
+            <div class="flex justify-between text-sm text-gray-600 mb-1">
+              <span>Stock:</span>
+              <span class="font-medium">1200 unidades</span>
+            </div>
+            <div class="mt-3 pt-3 border-t border-gray-100">
+              <span
+                class="inline-block bg-gray-100 text-gray-800 text-xs px-2.5 py-1 rounded-full"
+                >Panadería</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col h-full border border-gray-100"
+        >
+          <div class="flex justify-between items-start mb-3">
+            <div class="bg-indigo-100 p-2 rounded-lg">
+              <span class="text-xl">🍞</span>
+            </div>
+            <span
+              class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-1 rounded-full"
+              >Trending</span
+            >
+          </div>
+          <p class="text-xl font-bold text-gray-800 mt-2">Pan Baguette</p>
+          <p class="text-indigo-600 font-medium text-sm mb-2">La Panadería</p>
+          <div class="mt-auto">
+            <p class="text-3xl font-bold text-gray-800 mb-2">$2.50</p>
+            <div class="flex justify-between text-sm text-gray-600 mb-1">
+              <span>Ganancia:</span>
+              <span class="font-bold text-green-600">$1.20</span>
+            </div>
+            <div class="flex justify-between text-sm text-gray-600 mb-1">
+              <span>Stock:</span>
+              <span class="font-medium">1200 unidades</span>
+            </div>
+            <div class="mt-3 pt-3 border-t border-gray-100">
+              <span
+                class="inline-block bg-gray-100 text-gray-800 text-xs px-2.5 py-1 rounded-full"
+                >Panadería</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-8 grid grid-cols-1 lg:grid-cols-2 gap-10">
+      <!-- Pérdidas y Ganancias con Gráfico -->
+      <div class="bg-white p-6 rounded-xl shadow-lg w-full">
+        <h2 class="text-xl font-bold mb-6 text-gray-800 flex items-center">
+          Pérdidas y Ganancias
+        </h2>
+        <canvas id="gananciasChart" class="pointer-events-none"></canvas>
+      </div>
+      <!-- Categorías Más Populares con Gráfico -->
+      <div class="bg-white p-6 rounded-xl shadow-lg w-full">
+        <h2 class="text-xl font-bold mb-6 text-gray-800 flex items-center">
+          Categorías Más Populares
+        </h2>
+        <canvas id="categoriasChart" class="pointer-events-none"></canvas>
+      </div>
+    </div>
+
+    <!-- Clientes -->
+    <div class="mb-8">
+      <h2 class="text-xl font-bold mb-6 text-gray-800 flex items-center">
+        Clientes Recientes
+      </h2>
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6"
+      >
+        <div
+          class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col h-full border border-gray-100 relative"
+        >
+          <span
+            class="absolute -top-3 -right-3 bg-green-500 text-white text-xs px-3 py-1 rounded-full shadow-md"
+            >Nuevo</span
+          >
+          <div class="flex flex-col items-center mb-4">
+            <div
+              class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-2"
+            >
+              <span class="text-indigo-600 font-bold text-xl">JP</span>
+            </div>
+            <p class="text-xl font-bold text-center">Juan Pérez</p>
+          </div>
+          <div class="space-y-2 text-sm">
+            <p class="flex items-center">
+              <span class="text-indigo-600 mr-2">📧</span>
+              <span class="text-gray-600 truncate">juan.perez@example.com</span>
+            </p>
+            <p class="flex items-center">
+              <span class="text-indigo-600 mr-2">📞</span>
+              <span class="text-gray-600">555-1234</span>
+            </p>
+            <p class="flex items-center">
+              <span class="text-indigo-600 mr-2">🛒</span>
+              <span class="text-gray-600">28/02/2025</span>
+            </p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-gray-100 text-center">
+            <span
+              class="inline-block bg-indigo-100 text-indigo-800 text-xs px-2.5 py-1 rounded-full"
+              >4 compras</span
+            >
+          </div>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col h-full border border-gray-100 relative"
+        >
+          <span
+            class="absolute -top-3 -right-3 bg-green-500 text-white text-xs px-3 py-1 rounded-full shadow-md"
+            >Nuevo</span
+          >
+          <div class="flex flex-col items-center mb-4">
+            <div
+              class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-2"
+            >
+              <span class="text-indigo-600 font-bold text-xl">JP</span>
+            </div>
+            <p class="text-xl font-bold text-center">Juan Pérez</p>
+          </div>
+          <div class="space-y-2 text-sm">
+            <p class="flex items-center">
+              <span class="text-indigo-600 mr-2">📧</span>
+              <span class="text-gray-600 truncate">juan.perez@example.com</span>
+            </p>
+            <p class="flex items-center">
+              <span class="text-indigo-600 mr-2">📞</span>
+              <span class="text-gray-600">729 555 1234</span>
+            </p>
+            <p class="flex items-center">
+              <span class="text-indigo-600 mr-2">🛒</span>
+              <span class="text-gray-600">28/02/2025</span>
+            </p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-gray-100 text-center">
+            <span
+              class="inline-block bg-indigo-100 text-indigo-800 text-xs px-2.5 py-1 rounded-full"
+              >4 compras</span
+            >
+          </div>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col h-full border border-gray-100 relative"
+        >
+          <span
+            class="absolute -top-3 -right-3 bg-green-500 text-white text-xs px-3 py-1 rounded-full shadow-md"
+            >Nuevo</span
+          >
+          <div class="flex flex-col items-center mb-4">
+            <div
+              class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-2"
+            >
+              <span class="text-indigo-600 font-bold text-xl">JP</span>
+            </div>
+            <p class="text-xl font-bold text-center">Juan Pérez</p>
+          </div>
+          <div class="space-y-2 text-sm">
+            <p class="flex items-center">
+              <span class="text-indigo-600 mr-2">📧</span>
+              <span class="text-gray-600 truncate">juan.perez@example.com</span>
+            </p>
+            <p class="flex items-center">
+              <span class="text-indigo-600 mr-2">📞</span>
+              <span class="text-gray-600">729 555 1234</span>
+            </p>
+            <p class="flex items-center">
+              <span class="text-indigo-600 mr-2">🛒</span>
+              <span class="text-gray-600">28/02/2025</span>
+            </p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-gray-100 text-center">
+            <span
+              class="inline-block bg-indigo-100 text-indigo-800 text-xs px-2.5 py-1 rounded-full"
+              >4 compras</span
+            >
+          </div>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col h-full border border-gray-100 relative"
+        >
+          <span
+            class="absolute -top-3 -right-3 bg-green-500 text-white text-xs px-3 py-1 rounded-full shadow-md"
+            >Nuevo</span
+          >
+          <div class="flex flex-col items-center mb-4">
+            <div
+              class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-2"
+            >
+              <span class="text-indigo-600 font-bold text-xl">JP</span>
+            </div>
+            <p class="text-xl font-bold text-center">Juan Pérez</p>
+          </div>
+          <div class="space-y-2 text-sm">
+            <p class="flex items-center">
+              <span class="text-indigo-600 mr-2">📧</span>
+              <span class="text-gray-600 truncate">juan.perez@example.com</span>
+            </p>
+            <p class="flex items-center">
+              <span class="text-indigo-600 mr-2">📞</span>
+              <span class="text-gray-600">729 555 1234</span>
+            </p>
+            <p class="flex items-center">
+              <span class="text-indigo-600 mr-2">🛒</span>
+              <span class="text-gray-600">28/02/2025</span>
+            </p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-gray-100 text-center">
+            <span
+              class="inline-block bg-indigo-100 text-indigo-800 text-xs px-2.5 py-1 rounded-full"
+              >4 compras</span
+            >
+          </div>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col h-full border border-gray-100 relative"
+        >
+          <span
+            class="absolute -top-3 -right-3 bg-green-500 text-white text-xs px-3 py-1 rounded-full shadow-md"
+            >Nuevo</span
+          >
+          <div class="flex flex-col items-center mb-4">
+            <div
+              class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-2"
+            >
+              <span class="text-indigo-600 font-bold text-xl">JP</span>
+            </div>
+            <p class="text-xl font-bold text-center">Juan Pérez</p>
+          </div>
+          <div class="space-y-2 text-sm">
+            <p class="flex items-center">
+              <span class="text-indigo-600 mr-2">📧</span>
+              <span class="text-gray-600 truncate">juan.perez@example.com</span>
+            </p>
+            <p class="flex items-center">
+              <span class="text-indigo-600 mr-2">📞</span>
+              <span class="text-gray-600">729 555 1234</span>
+            </p>
+            <p class="flex items-center">
+              <span class="text-indigo-600 mr-2">🛒</span>
+              <span class="text-gray-600">28/02/2025</span>
+            </p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-gray-100 text-center">
+            <span
+              class="inline-block bg-indigo-100 text-indigo-800 text-xs px-2.5 py-1 rounded-full"
+              >4 compras</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Inventario y Abastecimiento -->
+    <div class="mb-8">
+      <h2 class="text-xl font-bold mb-6 text-gray-800 flex items-center">
+        Inventario y Abastecimiento
+      </h2>
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6"
+      >
+        <!-- Producto 1: Leche Deslactosada (Bajo Stock) -->
+        <div
+          class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col h-full border border-red-200 relative"
+        >
+          <span
+            class="absolute -top-3 -right-3 bg-red-500 text-white text-xs px-3 py-1 rounded-full shadow-md"
+            >Stock Bajo</span
+          >
+          <div class="flex justify-between items-start mb-3">
+            <div class="bg-red-100 p-2 rounded-lg">
+              <span class="text-xl">🥛</span>
+            </div>
+          </div>
+          <p class="text-xl font-bold text-gray-800 mt-2">Leche Deslactosada</p>
+          <p class="text-indigo-600 font-medium text-sm mb-2">Lácteos</p>
+          <div class="mt-auto">
+            <p class="text-3xl font-bold text-gray-800 mb-2">$1.80</p>
+            <div class="flex justify-between text-sm text-gray-600 mb-1">
+              <span>Ganancia:</span>
+              <span class="font-bold text-green-600">$0.50</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span class="text-gray-600">Stock:</span>
+              <span class="font-bold text-red-600">20 unidades</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5 mt-2 mb-3">
+              <div
+                class="bg-red-600 h-2.5 rounded-full"
+                style="width: 10%"
+              ></div>
+            </div>
+            <div class="mt-3 pt-3 border-t border-gray-100">
+              <span
+                class="inline-block bg-gray-100 text-gray-800 text-xs px-2.5 py-1 rounded-full"
+                >Lácteos</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Producto 2: Queso Fresco (Stock Medio) -->
+        <div
+          class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col h-full border border-yellow-200 relative"
+        >
+          <span
+            class="absolute -top-3 -right-3 bg-yellow-500 text-white text-xs px-3 py-1 rounded-full shadow-md"
+            >Stock Medio</span
+          >
+          <div class="flex justify-between items-start mb-3">
+            <div class="bg-yellow-100 p-2 rounded-lg">
+              <span class="text-xl">🧀</span>
+            </div>
+          </div>
+          <p class="text-xl font-bold text-gray-800 mt-2">Queso Fresco</p>
+          <p class="text-indigo-600 font-medium text-sm mb-2">Lácteos</p>
+          <div class="mt-auto">
+            <p class="text-3xl font-bold text-gray-800 mb-2">$3.50</p>
+            <div class="flex justify-between text-sm text-gray-600 mb-1">
+              <span>Ganancia:</span>
+              <span class="font-bold text-green-600">$0.85</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span class="text-gray-600">Stock:</span>
+              <span class="font-bold text-yellow-600">45 unidades</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5 mt-2 mb-3">
+              <div
+                class="bg-yellow-500 h-2.5 rounded-full"
+                style="width: 45%"
+              ></div>
+            </div>
+            <div class="mt-3 pt-3 border-t border-gray-100">
+              <span
+                class="inline-block bg-gray-100 text-gray-800 text-xs px-2.5 py-1 rounded-full"
+                >Lácteos</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Producto 3: Yogurt Natural (Stock Alto) -->
+        <div
+          class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col h-full border border-green-200 relative"
+        >
+          <span
+            class="absolute -top-3 -right-3 bg-green-500 text-white text-xs px-3 py-1 rounded-full shadow-md"
+            >Stock Alto</span
+          >
+          <div class="flex justify-between items-start mb-3">
+            <div class="bg-green-100 p-2 rounded-lg">
+              <span class="text-xl">🥛</span>
+            </div>
+          </div>
+          <p class="text-xl font-bold text-gray-800 mt-2">Yogurt Natural</p>
+          <p class="text-indigo-600 font-medium text-sm mb-2">Lácteos</p>
+          <div class="mt-auto">
+            <p class="text-3xl font-bold text-gray-800 mb-2">$2.25</p>
+            <div class="flex justify-between text-sm text-gray-600 mb-1">
+              <span>Ganancia:</span>
+              <span class="font-bold text-green-600">$0.60</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span class="text-gray-600">Stock:</span>
+              <span class="font-bold text-green-600">75 unidades</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5 mt-2 mb-3">
+              <div
+                class="bg-green-600 h-2.5 rounded-full"
+                style="width: 75%"
+              ></div>
+            </div>
+            <div class="mt-3 pt-3 border-t border-gray-100">
+              <span
+                class="inline-block bg-gray-100 text-gray-800 text-xs px-2.5 py-1 rounded-full"
+                >Lácteos</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Producto 4: Mantequilla (Bajo Stock) -->
+        <div
+          class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col h-full border border-red-200 relative"
+        >
+          <span
+            class="absolute -top-3 -right-3 bg-red-500 text-white text-xs px-3 py-1 rounded-full shadow-md"
+            >Stock Bajo</span
+          >
+          <div class="flex justify-between items-start mb-3">
+            <div class="bg-red-100 p-2 rounded-lg">
+              <span class="text-xl">🧈</span>
+            </div>
+          </div>
+          <p class="text-xl font-bold text-gray-800 mt-2">Mantequilla</p>
+          <p class="text-indigo-600 font-medium text-sm mb-2">Lácteos</p>
+          <div class="mt-auto">
+            <p class="text-3xl font-bold text-gray-800 mb-2">$2.80</p>
+            <div class="flex justify-between text-sm text-gray-600 mb-1">
+              <span>Ganancia:</span>
+              <span class="font-bold text-green-600">$0.70</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span class="text-gray-600">Stock:</span>
+              <span class="font-bold text-red-600">15 unidades</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5 mt-2 mb-3">
+              <div
+                class="bg-red-600 h-2.5 rounded-full"
+                style="width: 15%"
+              ></div>
+            </div>
+            <div class="mt-3 pt-3 border-t border-gray-100">
+              <span
+                class="inline-block bg-gray-100 text-gray-800 text-xs px-2.5 py-1 rounded-full"
+                >Lácteos</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Producto 5: Crema Agria (Stock Medio) -->
+        <div
+          class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col h-full border border-yellow-200 relative"
+        >
+          <span
+            class="absolute -top-3 -right-3 bg-yellow-500 text-white text-xs px-3 py-1 rounded-full shadow-md"
+            >Stock Medio</span
+          >
+          <div class="flex justify-between items-start mb-3">
+            <div class="bg-yellow-100 p-2 rounded-lg">
+              <span class="text-xl">🥛</span>
+            </div>
+          </div>
+          <p class="text-xl font-bold text-gray-800 mt-2">Crema Agria</p>
+          <p class="text-indigo-600 font-medium text-sm mb-2">Lácteos</p>
+          <div class="mt-auto">
+            <p class="text-3xl font-bold text-gray-800 mb-2">$1.95</p>
+            <div class="flex justify-between text-sm text-gray-600 mb-1">
+              <span>Ganancia:</span>
+              <span class="font-bold text-green-600">$0.45</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span class="text-gray-600">Stock:</span>
+              <span class="font-bold text-yellow-600">38 unidades</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5 mt-2 mb-3">
+              <div
+                class="bg-yellow-500 h-2.5 rounded-full"
+                style="width: 38%"
+              ></div>
+            </div>
+            <div class="mt-3 pt-3 border-t border-gray-100">
+              <span
+                class="inline-block bg-gray-100 text-gray-800 text-xs px-2.5 py-1 rounded-full"
+                >Lácteos</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ui:define>
+</ui:composition>

@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<ui:composition
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+  template="/components/layout.xhtml"
+>
+  <!-- Título dinámico de la pestaña -->
+  <ui:define name="title">Compras - Destinity</ui:define>
+
+  <!-- Contenido principal -->
+  <ui:define name="content">
+    <!-- Dashboard Header con estadísticas -->
+    <div class="flex flex-col md:flex-row justify-between items-center mb-6">
+      <h2
+        class="text-2xl md:text-3xl font-bold text-gray-800 flex items-center gap-2 mb-4 md:mb-0"
+      >
+        <i class="ph ph-shopping-cart text-blue-600"></i> Gestión de Compras
+      </h2>
+      <div class="flex flex-wrap gap-4">
+        <div
+          class="bg-white p-3 rounded-lg shadow-md flex items-center gap-3 border-l-4 border-blue-500"
+        >
+          <div class="bg-blue-100 p-2 rounded-full">
+            <i class="ph ph-shopping-bag text-blue-600 text-xl"></i>
+          </div>
+          <div>
+            <p class="text-sm text-gray-500">Órdenes Activas</p>
+            <p class="text-xl font-bold">28</p>
+          </div>
+        </div>
+        <div
+          class="bg-white p-3 rounded-lg shadow-md flex items-center gap-3 border-l-4 border-amber-500"
+        >
+          <div class="bg-amber-100 p-2 rounded-full">
+            <i class="ph ph-clock text-amber-600 text-xl"></i>
+          </div>
+          <div>
+            <p class="text-sm text-gray-500">Pendientes</p>
+            <p class="text-xl font-bold">12</p>
+          </div>
+        </div>
+        <div
+          class="bg-white p-3 rounded-lg shadow-md flex items-center gap-3 border-l-4 border-green-500"
+        >
+          <div class="bg-green-100 p-2 rounded-full">
+            <i class="ph ph-currency-dollar text-green-600 text-xl"></i>
+          </div>
+          <div>
+            <p class="text-sm text-gray-500">Presupuesto Disponible</p>
+            <p class="text-xl font-bold">$24,580</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Barra de búsqueda y filtros -->
+    <div
+      class="flex flex-col md:flex-row justify-between gap-4 mb-6 bg-white p-4 rounded-lg shadow-md"
+    >
+      <div class="relative flex-1">
+        <i
+          class="ph ph-magnifying-glass absolute left-3 top-3 text-gray-400"
+        ></i>
+        <input
+          type="text"
+          placeholder="Buscar orden o proveedor..."
+          class="pl-10 p-3 border rounded w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+      <div class="flex flex-wrap gap-2 items-center">
+        <select
+          class="p-3 border rounded bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          <option>Todos los proveedores</option>
+          <option>Distribuidora Central</option>
+          <option>Insumos Rápidos</option>
+          <option>MayorPlus</option>
+        </select>
+        <select
+          class="p-3 border rounded bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          <option>Todos los estados</option>
+          <option>Pendiente</option>
+          <option>Aprobado</option>
+          <option>En tránsito</option>
+          <option>Recibido</option>
+          <option>Cancelado</option>
+        </select>
+        <button
+          class="bg-blue-600 text-white hover:bg-blue-700 px-6 py-3 rounded-lg flex items-center gap-2 transition duration-300 shadow-md"
+        >
+          <i class="ph ph-plus"></i> Nueva Orden
+        </button>
+      </div>
+    </div>
+
+    <!-- Tabla de Órdenes de Compra -->
+    <div class="bg-white p-4 rounded-lg shadow-lg overflow-x-auto mb-6">
+      <h3 class="text-lg font-bold text-gray-700 mb-4 flex items-center gap-2">
+        <i class="ph ph-clipboard-text text-blue-600"></i> Órdenes de Compra
+      </h3>
+      <table class="w-full text-left border-collapse">
+        <thead>
+          <tr>
+            <th
+              class="p-4 bg-gray-50 border-b-2 border-gray-200 text-gray-700 font-semibold"
+            >
+              Orden #
+            </th>
+            <th
+              class="p-4 bg-gray-50 border-b-2 border-gray-200 text-gray-700 font-semibold"
+            >
+              Proveedor
+            </th>
+            <th
+              class="p-4 bg-gray-50 border-b-2 border-gray-200 text-gray-700 font-semibold"
+            >
+              Fecha
+            </th>
+            <th
+              class="p-4 bg-gray-50 border-b-2 border-gray-200 text-gray-700 font-semibold"
+            >
+              Total
+            </th>
+            <th
+              class="p-4 bg-gray-50 border-b-2 border-gray-200 text-gray-700 font-semibold"
+            >
+              Estado
+            </th>
+            <th
+              class="p-4 bg-gray-50 border-b-2 border-gray-200 text-gray-700 font-semibold"
+            >
+              Aprobación
+            </th>
+            <th
+              class="p-4 bg-gray-50 border-b-2 border-gray-200 text-gray-700 font-semibold text-center"
+            >
+              Acciones
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b hover:bg-blue-50 transition duration-150">
+            <td class="p-4">
+              <div class="flex items-center">
+                <span class="font-medium text-blue-600">#OC-2025-421</span>
+              </div>
+            </td>
+            <td class="p-4">
+              <div class="flex items-center gap-2">
+                <div class="bg-teal-100 p-1 rounded-full">
+                  <i class="ph ph-buildings text-teal-600"></i>
+                </div>
+                <span>Distribuidora Central</span>
+              </div>
+            </td>
+            <td class="p-4">01/03/2025</td>
+            <td class="p-4 font-medium">$4,850.00</td>
+            <td class="p-4">
+              <span
+                class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1 w-fit"
+              >
+                <i class="ph ph-clock"></i> Pendiente
+              </span>
+            </td>
+            <td class="p-4">
+              <div class="flex items-center gap-2">
+                <span
+                  class="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs"
+                  >Jefe de Compras</span
+                >
+                <i class="ph ph-hourglass text-amber-500"></i>
+              </div>
+            </td>
+            <td class="p-4">
+              <div class="flex justify-center gap-2">
+                <button
+                  class="text-teal-600 hover:text-teal-800 bg-teal-100 p-2 rounded transition duration-150"
+                  title="Ver detalles"
+                >
+                  <i class="ph ph-eye"></i>
+                </button>
+                <button
+                  class="text-blue-600 hover:text-blue-800 bg-blue-100 p-2 rounded transition duration-150"
+                  title="Editar"
+                >
+                  <i class="ph ph-pencil"></i>
+                </button>
+                <button
+                  class="text-red-600 hover:text-red-800 bg-red-100 p-2 rounded transition duration-150"
+                  title="Cancelar"
+                >
+                  <i class="ph ph-x"></i>
+                </button>
+              </div>
+            </td>
+          </tr>
+          <tr class="border-b hover:bg-blue-50 transition duration-150">
+            <td class="p-4">
+              <div class="flex items-center">
+                <span class="font-medium text-blue-600">#OC-2025-420</span>
+              </div>
+            </td>
+            <td class="p-4">
+              <div class="flex items-center gap-2">
+                <div class="bg-teal-100 p-1 rounded-full">
+                  <i class="ph ph-buildings text-teal-600"></i>
+                </div>
+                <span>Insumos Rápidos</span>
+              </div>
+            </td>
+            <td class="p-4">28/02/2025</td>
+            <td class="p-4 font-medium">$2,340.50</td>
+            <td class="p-4">
+              <span
+                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1 w-fit"
+              >
+                <i class="ph ph-truck"></i> En tránsito
+              </span>
+            </td>
+            <td class="p-4">
+              <div class="flex items-center gap-2">
+                <span
+                  class="bg-green-100 text-green-600 px-2 py-1 rounded text-xs"
+                  >Aprobado</span
+                >
+                <i class="ph ph-check-circle text-green-500"></i>
+              </div>
+            </td>
+            <td class="p-4">
+              <div class="flex justify-center gap-2">
+                <button
+                  class="text-teal-600 hover:text-teal-800 bg-teal-100 p-2 rounded transition duration-150"
+                  title="Ver detalles"
+                >
+                  <i class="ph ph-eye"></i>
+                </button>
+                <button
+                  class="text-green-600 hover:text-green-800 bg-green-100 p-2 rounded transition duration-150"
+                  title="Marcar como recibido"
+                >
+                  <i class="ph ph-check"></i>
+                </button>
+              </div>
+            </td>
+          </tr>
+          <tr class="border-b hover:bg-blue-50 transition duration-150">
+            <td class="p-4">
+              <div class="flex items-center">
+                <span class="font-medium text-blue-600">#OC-2025-419</span>
+              </div>
+            </td>
+            <td class="p-4">
+              <div class="flex items-center gap-2">
+                <div class="bg-teal-100 p-1 rounded-full">
+                  <i class="ph ph-buildings text-teal-600"></i>
+                </div>
+                <span>MayorPlus</span>
+              </div>
+            </td>
+            <td class="p-4">25/02/2025</td>
+            <td class="p-4 font-medium">$7,815.00</td>
+            <td class="p-4">
+              <span
+                class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1 w-fit"
+              >
+                <i class="ph ph-check-circle"></i> Recibido
+              </span>
+            </td>
+            <td class="p-4">
+              <div class="flex items-center gap-2">
+                <span
+                  class="bg-green-100 text-green-600 px-2 py-1 rounded text-xs"
+                  >Completado</span
+                >
+                <i class="ph ph-check-circle text-green-500"></i>
+              </div>
+            </td>
+            <td class="p-4">
+              <div class="flex justify-center gap-2">
+                <button
+                  class="text-teal-600 hover:text-teal-800 bg-teal-100 p-2 rounded transition duration-150"
+                  title="Ver detalles"
+                >
+                  <i class="ph ph-eye"></i>
+                </button>
+                <button
+                  class="text-purple-600 hover:text-purple-800 bg-purple-100 p-2 rounded transition duration-150"
+                  title="Crear PDF"
+                >
+                  <i class="ph ph-file-pdf"></i>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Paginación -->
+      <div class="flex justify-between items-center mt-6 px-4">
+        <div class="text-sm text-gray-500">
+          Mostrando <span class="font-medium">1-3</span> de
+          <span class="font-medium">28</span> órdenes
+        </div>
+        <div class="flex gap-2">
+          <button
+            class="px-3 py-1 rounded border text-gray-500 hover:bg-gray-50 disabled:opacity-50"
+          >
+            <i class="ph ph-caret-left"></i>
+          </button>
+          <button class="px-3 py-1 rounded border bg-blue-600 text-white">
+            1
+          </button>
+          <button
+            class="px-3 py-1 rounded border text-gray-700 hover:bg-gray-50"
+          >
+            2
+          </button>
+          <button
+            class="px-3 py-1 rounded border text-gray-700 hover:bg-gray-50"
+          >
+            3
+          </button>
+          <button
+            class="px-3 py-1 rounded border text-gray-700 hover:bg-gray-50"
+          >
+            <i class="ph ph-dots-three-outline"></i>
+          </button>
+          <button
+            class="px-3 py-1 rounded border text-gray-700 hover:bg-gray-50"
+          >
+            10
+          </button>
+          <button
+            class="px-3 py-1 rounded border text-gray-500 hover:bg-gray-50"
+          >
+            <i class="ph ph-caret-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección inferior con widgets -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Proveedores Frecuentes -->
+      <div class="bg-white p-4 rounded-lg shadow-md">
+        <h3
+          class="text-lg font-bold text-gray-700 mb-4 flex items-center gap-2 pb-2 border-b"
+        >
+          <i class="ph ph-users text-blue-600"></i> Proveedores Frecuentes
+        </h3>
+        <ul class="divide-y">
+          <li class="py-3 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+              <div class="bg-blue-100 p-2 rounded-full">
+                <span class="font-bold text-blue-800">DC</span>
+              </div>
+              <div>
+                <p class="font-medium">Distribuidora Central</p>
+                <p class="text-sm text-gray-500">15 órdenes este mes</p>
+              </div>
+            </div>
+            <button
+              class="text-blue-600 hover:text-blue-800 bg-blue-50 px-3 py-1 rounded text-sm"
+            >
+              Contactar
+            </button>
+          </li>
+          <li class="py-3 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+              <div class="bg-green-100 p-2 rounded-full">
+                <span class="font-bold text-green-800">IR</span>
+              </div>
+              <div>
+                <p class="font-medium">Insumos Rápidos</p>
+                <p class="text-sm text-gray-500">8 órdenes este mes</p>
+              </div>
+            </div>
+            <button
+              class="text-blue-600 hover:text-blue-800 bg-blue-50 px-3 py-1 rounded text-sm"
+            >
+              Contactar
+            </button>
+          </li>
+          <li class="py-3 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+              <div class="bg-amber-100 p-2 rounded-full">
+                <span class="font-bold text-amber-800">MP</span>
+              </div>
+              <div>
+                <p class="font-medium">MayorPlus</p>
+                <p class="text-sm text-gray-500">5 órdenes este mes</p>
+              </div>
+            </div>
+            <button
+              class="text-blue-600 hover:text-blue-800 bg-blue-50 px-3 py-1 rounded text-sm"
+            >
+              Contactar
+            </button>
+          </li>
+        </ul>
+        <button
+          class="w-full mt-4 text-blue-600 bg-blue-50 hover:bg-blue-100 px-4 py-2 rounded"
+        >
+          Ver todos los proveedores
+        </button>
+      </div>
+
+      <!-- Productos a Comprar (Reabastecimiento) -->
+      <div class="bg-white p-4 rounded-lg shadow-md">
+        <h3
+          class="text-lg font-bold text-gray-700 mb-4 flex items-center gap-2 pb-2 border-b"
+        >
+          <i class="ph-shopping-cart-simple text-red-600"></i> Productos por
+          Comprar
+        </h3>
+        <ul class="divide-y">
+          <li class="py-3 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+              <div class="p-1 rounded">
+                <i class="ph ph-cookie text-red-600 text-xl"></i>
+              </div>
+              <div>
+                <p class="font-medium">Azúcar Refinada</p>
+                <p
+                  class="text-xs bg-red-100 text-red-800 px-2 py-0.5 rounded w-fit"
+                >
+                  Agotado
+                </p>
+              </div>
+            </div>
+            <button
+              class="text-blue-600 hover:text-blue-800 bg-blue-50 px-3 py-1 rounded text-sm"
+            >
+              Añadir
+            </button>
+          </li>
+          <li class="py-3 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+              <div class="p-1 rounded">
+                <i class="ph ph-bread text-yellow-600 text-xl"></i>
+              </div>
+              <div>
+                <p class="font-medium">Harina de Trigo</p>
+                <p
+                  class="text-xs bg-yellow-100 text-yellow-800 px-2 py-0.5 rounded w-fit"
+                >
+                  Bajo stock
+                </p>
+              </div>
+            </div>
+            <button
+              class="text-blue-600 hover:text-blue-800 bg-blue-50 px-3 py-1 rounded text-sm"
+            >
+              Añadir
+            </button>
+          </li>
+          <li class="py-3 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+              <div class="p-1 rounded">
+                <i class="ph ph-ruler text-blue-600 text-xl"></i>
+              </div>
+              <div>
+                <p class="font-medium">Cuadernos A4</p>
+                <p
+                  class="text-xs bg-yellow-100 text-yellow-800 px-2 py-0.5 rounded w-fit"
+                >
+                  Bajo stock
+                </p>
+              </div>
+            </div>
+            <button
+              class="text-blue-600 hover:text-blue-800 bg-blue-50 px-3 py-1 rounded text-sm"
+            >
+              Añadir
+            </button>
+          </li>
+        </ul>
+        <button
+          class="w-full mt-4 text-blue-600 bg-blue-50 hover:bg-blue-100 px-4 py-2 rounded"
+        >
+          Ver todos los productos
+        </button>
+      </div>
+
+      <!-- Aprobaciones Pendientes -->
+      <div class="bg-white p-4 rounded-lg shadow-md">
+        <h3
+          class="text-lg font-bold text-gray-700 mb-4 flex items-center gap-2 pb-2 border-b"
+        >
+          <i class="ph ph-check-square text-amber-600"></i> Aprobaciones
+          Pendientes
+        </h3>
+        <ul class="divide-y">
+          <li class="py-3">
+            <div class="flex justify-between mb-1">
+              <p class="font-medium">#OC-2025-421</p>
+              <p class="text-sm text-gray-500">01/03/2025</p>
+            </div>
+            <div class="flex justify-between items-center">
+              <p class="text-sm">Distribuidora Central - $4,850.00</p>
+              <div class="flex gap-2">
+                <button
+                  class="text-green-600 hover:text-green-800 bg-green-100 p-1.5 rounded transition duration-150"
+                  title="Aprobar"
+                >
+                  <i class="ph ph-check"></i>
+                </button>
+                <button
+                  class="text-red-600 hover:text-red-800 bg-red-100 p-1.5 rounded transition duration-150"
+                  title="Rechazar"
+                >
+                  <i class="ph ph-x"></i>
+                </button>
+              </div>
+            </div>
+          </li>
+          <li class="py-3">
+            <div class="flex justify-between mb-1">
+              <p class="font-medium">#OC-2025-418</p>
+              <p class="text-sm text-gray-500">25/02/2025</p>
+            </div>
+            <div class="flex justify-between items-center">
+              <p class="text-sm">Productos Orgánicos - $3,250.00</p>
+              <div class="flex gap-2">
+                <button
+                  class="text-green-600 hover:text-green-800 bg-green-100 p-1.5 rounded transition duration-150"
+                  title="Aprobar"
+                >
+                  <i class="ph ph-check"></i>
+                </button>
+                <button
+                  class="text-red-600 hover:text-red-800 bg-red-100 p-1.5 rounded transition duration-150"
+                  title="Rechazar"
+                >
+                  <i class="ph ph ph-x"></i>
+                </button>
+              </div>
+            </div>
+          </li>
+          <li class="py-3">
+            <div class="flex justify-between mb-1">
+              <p class="font-medium">#OC-2025-416</p>
+              <p class="text-sm text-gray-500">22/02/2025</p>
+            </div>
+            <div class="flex justify-between items-center">
+              <p class="text-sm">Suministros Escolares - $1,840.50</p>
+              <div class="flex gap-2">
+                <button
+                  class="text-green-600 hover:text-green-800 bg-green-100 p-1.5 rounded transition duration-150"
+                  title="Aprobar"
+                >
+                  <i class="ph ph-check"></i>
+                </button>
+                <button
+                  class="text-red-600 hover:text-red-800 bg-red-100 p-1.5 rounded transition duration-150"
+                  title="Rechazar"
+                >
+                  <i class="ph ph-x"></i>
+                </button>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <button
+          class="w-full mt-4 text-amber-600 bg-amber-50 hover:bg-amber-100 px-4 py-2 rounded"
+        >
+          Revisar todas las aprobaciones
+        </button>
+      </div>
+    </div>
+  </ui:define>
+</ui:composition>
