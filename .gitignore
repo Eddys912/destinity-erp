@@ -1,0 +1,40 @@
+# Archivos de entorno
+**/env.properties
+
+# NetBeans
+**/nbproject/**
+build/
+dist/
+nbbuild/
+nbdist/
+nbantext/
+nbactions.xml
+.nb-gradle/
+out/
+target/
+nb-configuration.xml
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.log
+*.tmp
+*.bak
+
+# Sistema Operativo
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+#  IDEs adicionales
+*.iml
+.idea/
+.vscode/
+
+#  Archivos temporales
+*.swp
+*.swo
+*.orig
