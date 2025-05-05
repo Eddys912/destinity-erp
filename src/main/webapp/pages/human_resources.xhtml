@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<ui:composition
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+  template="/components/layout.xhtml"
+>
+  <!-- Título dinámico de la pestaña -->
+  <ui:define name="title">Recursos Humanos - Destinity</ui:define>
+
+  <!-- Contenido principal -->
+  <ui:define name="content">
+    <h1 class="sr-only">Recursos Humanos Destinity</h1>
+    <!-- Dashboard Header con estadísticas de RRHH -->
+    <div class="flex flex-col md:flex-row justify-between items-center mb-6">
+      <h2
+        class="text-2xl md:text-3xl font-bold text-gray-800 flex items-center gap-2 mb-4 md:mb-0"
+      >
+        <i class="ph ph-users text-blue-600"></i> Gestión de Recursos Humanos
+      </h2>
+      <div class="flex flex-wrap gap-4">
+        <div
+          class="bg-white p-3 rounded-lg shadow-md flex items-center gap-3 border-l-4 border-green-500"
+        >
+          <div class="bg-green-100 p-2 rounded-full">
+            <i class="ph ph-user-plus text-green-600 text-xl"></i>
+          </div>
+          <div>
+            <p class="text-sm text-gray-500">Total Empleados</p>
+            <p class="text-xl font-bold">15</p>
+          </div>
+        </div>
+        <div
+          class="bg-white p-3 rounded-lg shadow-md flex items-center gap-3 border-l-4 border-blue-500"
+        >
+          <div class="bg-blue-100 p-2 rounded-full">
+            <i class="ph ph-briefcase text-blue-600 text-xl"></i>
+          </div>
+          <div>
+            <p class="text-sm text-gray-500">Departamentos</p>
+            <p class="text-xl font-bold">6</p>
+          </div>
+        </div>
+        <div
+          class="bg-white p-3 rounded-lg shadow-md flex items-center gap-3 border-l-4 border-amber-500"
+        >
+          <div class="bg-yellow-100 p-2 rounded-full">
+            <i class="ph ph-clock text-amber-600 text-xl"></i>
+          </div>
+          <div>
+            <p class="text-sm text-gray-500">Nuevas Contrataciones</p>
+            <p class="text-xl font-bold">3</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Barra de búsqueda y filtros de empleados -->
+    <div
+      class="flex flex-col md:flex-row justify-between gap-4 mb-6 bg-white p-4 rounded-lg shadow-md"
+    >
+      <div class="relative flex-1">
+        <i
+          class="ph ph-magnifying-glass absolute left-3 top-3 text-gray-400"
+        ></i>
+        <input
+          type="text"
+          placeholder="Buscar empleado por nombre, departamento..."
+          class="pl-10 p-3 border rounded w-full focus:outline-none focus:ring-2 focus:ring-purple-500"
+        />
+      </div>
+      <div class="flex flex-wrap gap-2 items-center">
+        <select
+          class="p-3 border rounded bg-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+        >
+          <option>Todos los Departamentos</option>
+          <option>Sistemas</option>
+          <option>Ventas</option>
+          <option>Compras</option>
+          <option>Finanzas</option>
+          <option>Inventario</option>
+        </select>
+        <select
+          class="p-3 border rounded bg-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+        >
+          <option>Estado del Empleado</option>
+          <option>Activo</option>
+          <option>Vacaciones</option>
+          <option>Suspendido</option>
+        </select>
+        <button
+          class="bg-purple-600 text-white hover:bg-purple-700 px-6 py-3 rounded-lg flex items-center gap-2 transition duration-300 shadow-md"
+        >
+          <i class="ph ph-plus"></i> Nuevo Empleado
+        </button>
+      </div>
+    </div>
+
+    <!-- Tabla de Empleados -->
+    <div class="bg-white p-4 rounded-lg shadow-lg overflow-x-auto mb-6">
+      <h3 class="text-lg font-bold text-gray-700 mb-4 flex items-center gap-2">
+        <i class="ph ph-users text-purple-600"></i> Registro de Empleados
+      </h3>
+      <table id="" class="w-full text-left border-collapse">
+        <thead>
+          <tr>
+            <th
+              class="p-4 bg-gray-50 border-b-2 border-gray-200 text-gray-700 font-semibold"
+            >
+              #
+            </th>
+            <th
+              class="p-4 bg-gray-50 border-b-2 border-gray-200 text-gray-700 font-semibold"
+            >
+              Nombre
+            </th>
+            <th
+              class="p-4 bg-gray-50 border-b-2 border-gray-200 text-gray-700 font-semibold"
+            >
+              Departamento
+            </th>
+            <th
+              class="p-4 bg-gray-50 border-b-2 border-gray-200 text-gray-700 font-semibold"
+            >
+              Cargo
+            </th>
+            <th
+              class="p-4 bg-gray-50 border-b-2 border-gray-200 text-gray-700 font-semibold"
+            >
+              Fecha Ingreso
+            </th>
+            <th
+              class="p-4 bg-gray-50 border-b-2 border-gray-200 text-gray-700 font-semibold"
+            >
+              Estado
+            </th>
+            <th
+              class="p-4 bg-gray-50 border-b-2 border-gray-200 text-gray-700 font-semibold text-center"
+            >
+              Acciones
+            </th>
+          </tr>
+        </thead>
+        <tbody id="tbodyRh" />
+      </table>
+
+      <div id="paginationRh" class="mt-4 flex justify-center"></div>
+    </div>
+
+    <!-- Sección inferior con widgets de RRHH -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Próximos Cumpleaños -->
+      <div class="bg-white p-4 rounded-lg shadow-md">
+        <h3
+          class="text-lg font-bold text-gray-700 mb-4 flex items-center gap-2 pb-2 border-b"
+        >
+          <i class="ph ph-cake text-pink-600"></i> Próximos Cumpleaños
+        </h3>
+        <ul class="divide-y">
+          <li class="py-3 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+              <div
+                class="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center"
+              >
+                <span class="font-bold text-pink-800">EP</span>
+              </div>
+              <div>
+                <p class="font-medium">Eduardo David</p>
+                <p class="text-sm text-gray-500">29 de julio</p>
+              </div>
+            </div>
+            <button
+              class="text-pink-600 hover:text-pink-800 bg-pink-50 px-3 py-1 rounded text-sm"
+            >
+              Felicitar
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Capacitaciones Programadas -->
+      <div class="bg-white p-4 rounded-lg shadow-md">
+        <h3
+          class="text-lg font-bold text-gray-700 mb-4 flex items-center gap-2 pb-2 border-b"
+        >
+          <i class="ph ph-book-open text-green-600"></i> Capacitaciones
+        </h3>
+        <ul class="divide-y">
+          <li class="py-3 flex justify-between items-center">
+            <div>
+              <p class="font-medium">Atención al Cliente</p>
+              <p class="text-sm text-gray-500">20 de marzo, 14:00 hrs</p>
+            </div>
+            <span
+              class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs"
+              >Próximo</span
+            >
+          </li>
+        </ul>
+        <button
+          class="w-full mt-4 text-green-600 bg-green-50 hover:bg-green-100 px-4 py-2 rounded"
+        >
+          Ver calendario
+        </button>
+      </div>
+
+      <!-- Solicitudes Pendientes -->
+      <div class="bg-white p-4 rounded-lg shadow-md">
+        <h3
+          class="text-lg font-bold text-gray-700 mb-4 flex items-center gap-2 pb-2 border-b"
+        >
+          <i class="ph ph-clipboard text-amber-600"></i> Solicitudes Pendientes
+        </h3>
+        <ul class="divide-y">
+          <li class="py-3 flex justify-between items-center">
+            <div>
+              <p class="font-medium">Vacaciones - Elias Salvador</p>
+              <p class="text-sm text-gray-500">Del 10 al 20 de abril</p>
+            </div>
+            <div class="flex gap-2">
+              <button
+                class="text-green-600 hover:text-green-800 bg-green-100 p-1.5 rounded transition duration-150"
+                title="Aprobar"
+              >
+                <i class="ph ph-check"></i>
+              </button>
+              <button
+                class="text-red-600 hover:text-red-800 bg-red-100 p-1.5 rounded transition duration-150"
+                title="Rechazar"
+              >
+                <i class="ph ph-x"></i>
+              </button>
+            </div>
+          </li>
+        </ul>
+        <button
+          class="w-full mt-4 text-yellow-600 bg-yellow-50 hover:bg-amber-100 px-4 py-2 rounded"
+        >
+          Ver todas las solicitudes
+        </button>
+      </div>
+    </div>
+
+    <script
+      type="module"
+      src="#{request.contextPath}/resources/js/hr/fetchEmployees.js"
+    />
+  </ui:define>
+</ui:composition>
