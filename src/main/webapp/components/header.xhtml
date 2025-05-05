@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<ui:composition
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+  xmlns:h="http://xmlns.jcp.org/jsf/html"
+>
+  <header
+    class="bg-gradient-to-r from-blue-800 to-blue-600 text-white shadow-md fixed w-full z-30"
+  >
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo -->
+        <h1 class="text-2xl font-bold">
+          <a
+            href="#{request.contextPath}/pages/home.xhtml"
+            aria-label="Destinity ERP Inicio"
+            >Destinity - ERP</a
+          >
+        </h1>
+
+        <!-- Navegación principal -->
+        <nav
+          id="nav-links"
+          class="hidden md:flex space-x-4"
+          aria-label="Navegación principal"
+        ></nav>
+
+        <div class="flex items-center space-x-4">
+          <!-- Botón móvil -->
+          <button
+            id="mobile-menu-button"
+            class="md:hidden focus:outline-none"
+            aria-label="Abrir menú"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+
+          <!-- Perfil -->
+          <div class="relative">
+            <button
+              id="profile-button"
+              aria-expanded="false"
+              aria-haspopup="true"
+              aria-label="Menú de usuario"
+            >
+              <img
+                src="https://png.pngtree.com/png-clipart/20230811/original/pngtree-male-account-profile-worker-vector-picture-image_10398976.png"
+                class="w-8 h-8 rounded-full border-2 border-gray-300"
+                alt="Foto de perfil"
+              />
+            </button>
+
+            <!-- Menú de usuario -->
+            <div
+              id="profile-menu"
+              role="menu"
+              aria-labelledby="profile-button"
+              class="absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-lg p-4 text-gray-800 z-50 transition-all opacity-0 transform scale-95 pointer-events-none"
+            >
+              <p class="profile-user font-semibold px-3"></p>
+              <p class="profile-email text-sm text-gray-600 px-3"></p>
+              <hr class="my-2" />
+              <button
+                class="w-full text-left py-2 px-3 hover:bg-gray-100 rounded-lg"
+                role="menuitem"
+              >
+                ⚙️ Configuración
+              </button>
+              <button
+                class="w-full text-left py-2 px-3 hover:bg-gray-100 rounded-lg"
+                role="menuitem"
+              >
+                👨‍💻 Soporte
+              </button>
+              <button
+                class="text-red-600 font-semibold w-full text-left py-2 px-3 hover:bg-gray-100 rounded-lg"
+                role="menuitem"
+              >
+                🔒 Cerrar sesión
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Menú móvil - ahora dentro del contenedor max-width -->
+      <div id="mobile-menu" class="hidden md:hidden pb-4">
+        <nav
+          id="mobile-links"
+          class="flex flex-col space-y-2"
+          aria-label="Navegación móvil"
+        ></nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Espaciador para compensar el header fijo -->
+  <div class="h-16"></div>
+
+  <!-- Scripts del header -->
+  <script
+    type="module"
+    src="#{request.contextPath}/resources/js/layout/header_profile.js"
+  ></script>
+  <script
+    type="module"
+    src="#{request.contextPath}/resources/js/layout/header_mobile_menu.js"
+  ></script>
+</ui:composition>

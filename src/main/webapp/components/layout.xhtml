@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:ui="http://java.sun.com/jsf/facelets"
+  lang="es"
+>
+  <h:head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><ui:insert name="title">ERP Destinity</ui:insert></title>
+    <!-- TailwindCSS CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
+    <!-- Graficas con Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Íconos de Phosphor CDN -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link
+      rel="stylesheet"
+      href="#{request.contextPath}/resources/css/global.css"
+    />
+  </h:head>
+
+  <h:body class="bg-gray-100 min-h-screen flex flex-col">
+    <!-- Header global -->
+    <ui:include src="/components/header.xhtml" />
+
+    <!-- Contenido principal -->
+    <main class="flex-1 py-4">
+      <div class="max-w-7xl mx-auto py-6 px-4">
+        <ui:insert name="content" />
+      </div>
+    </main>
+
+    <!-- Footer global -->
+    <ui:include src="/components/footer.xhtml" />
+
+    <!-- Scripts globales -->
+    <script
+      type="module"
+      src="#{request.contextPath}/resources/js/layout/header_role.js"
+    ></script>
+  </h:body>
+</html>

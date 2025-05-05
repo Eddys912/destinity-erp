@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<ui:composition
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+>
+  <footer class="bg-gradient-to-r from-gray-900 to-gray-700 text-white">
+    <div class="max-w-7xl mx-auto py-6 px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Sobre Nosotros -->
+        <section aria-labelledby="about-heading">
+          <h2 id="about-heading" class="text-lg font-semibold mb-3">
+            Sobre Nosotros
+          </h2>
+          <p class="text-sm text-gray-300 leading-relaxed">
+            Destinity ERP es una solución moderna para la gestión empresarial,
+            facilitando la administración y optimización de recursos.
+          </p>
+        </section>
+
+        <!-- Enlaces Rápidos -->
+        <nav aria-labelledby="quicklinks-heading">
+          <h2 id="quicklinks-heading" class="text-lg font-semibold mb-3">
+            Enlaces Rápidos
+          </h2>
+          <ul class="text-sm text-gray-300 space-y-1">
+            <li>
+              <a
+                href="#{request.contextPath}/pages/home.xhtml"
+                class="hover:underline"
+                >Inicio</a
+              >
+            </li>
+            <li><a href="#" class="hover:underline">Servicios</a></li>
+            <li><a href="#" class="hover:underline">Contacto</a></li>
+            <li>
+              <a href="#" class="hover:underline">Términos y Condiciones</a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Contacto -->
+        <section aria-labelledby="contact-heading">
+          <h2 id="contact-heading" class="text-lg font-semibold mb-3">
+            Contacto
+          </h2>
+          <address class="not-italic">
+            <p class="text-sm text-gray-300 leading-relaxed">
+              Calle Empresarial 123, Ciudad ERP
+            </p>
+            <p class="text-sm text-gray-300 leading-relaxed">
+              <a href="mailto:contacto@destinity.com" class="hover:underline"
+                >contacto@destinity.com</a
+              >
+            </p>
+            <p class="text-sm text-gray-300 leading-relaxed">
+              <a href="tel:+527294567890" class="hover:underline"
+                >+52 729 456 7890</a
+              >
+            </p>
+          </address>
+        </section>
+      </div>
+
+      <div
+        class="border-t border-gray-600 mt-4 pt-4 text-center text-sm text-gray-400"
+      >
+        © 2025 Destinity ERP. Todos los derechos reservados.
+      </div>
+    </div>
+  </footer>
+</ui:composition>
